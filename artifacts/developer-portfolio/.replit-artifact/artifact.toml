@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Islam Salahelmogy — Web Developer Portfolio"
+description = "A polished personal portfolio for web developer Islam Salahelmogy, showcasing services, skills, GitHub projects, live work, and a direct contact experience."
+version = "1.0.0"
+id = "artifacts/developer-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19815
+
+[services.development]
+run = "pnpm --filter @workspace/developer-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/developer-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/developer-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19815"
+BASE_PATH = "/"
