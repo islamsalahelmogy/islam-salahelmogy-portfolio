@@ -15,6 +15,7 @@ import {
   Moon,
   ServerCog,
   Send,
+  Sparkles,
   Sun,
   Terminal,
   Twitter,
@@ -261,6 +262,7 @@ function Home() {
             <a href="#services" className="nav-link" onClick={scrollTo} data-testid="link-nav-services">Services</a>
             <a href="#work" className="nav-link" onClick={scrollTo} data-testid="link-nav-work">Work</a>
             <a href="#about" className="nav-link" onClick={scrollTo} data-testid="link-nav-about">About</a>
+            <a href="#concepts" className="nav-link" onClick={scrollTo}>Lab</a>
             <a href="#contact" className="nav-link" onClick={scrollTo} data-testid="link-nav-contact">Contact</a>
           </nav>
           <div className="header-actions">
@@ -299,13 +301,13 @@ function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="content-width hero-layout">
             <div className="reveal">
-              <div className="eyebrow">Independent developer / available for select work</div>
+              <div className="eyebrow"><span className="live-dot" /> Independent developer / available for select work</div>
               <h1 className="display" id="hero-title">
-                Backends that hold up.<br />
-                <em>Interfaces that click.</em>
+                Building digital<br />
+                products with <em>gravity.</em>
               </h1>
               <p className="hero-summary">
-                I&apos;m Islam — a Cairo-based web developer building dependable digital products with PHP, Laravel, Node.js, and a sharp eye for the browser.
+                I&apos;m Islam — a Cairo-based developer turning complex backend logic into web experiences that feel precise, fast, and ready to grow.
               </p>
               <div className="hero-ctas">
                 <a href="#work" className="button button-primary" onClick={scrollTo} data-testid="button-view-work">
@@ -323,8 +325,19 @@ function Home() {
                   <Twitter size={14} /> X / Twitter
                 </ExternalAnchor>
               </div>
+              <div className="hero-proof" aria-label="Development focus">
+                <span><strong>Backend</strong> systems</span>
+                <span><strong>Frontend</strong> craft</span>
+                <span><strong>Product</strong> thinking</span>
+              </div>
             </div>
-            <div className="code-window reveal delay-2" aria-label="Developer profile code preview" data-testid="card-code-preview">
+            <div className="hero-stage reveal delay-2">
+              <div className="stage-orbit orbit-one" />
+              <div className="stage-orbit orbit-two" />
+              <div className="status-chip"><span className="live-dot" /> Building from Cairo</div>
+              <div className="floating-note note-top"><Sparkles size={15} /><span>product-minded<br />engineering</span></div>
+              <div className="floating-note note-bottom"><span className="note-number">04</span><span>tools in<br />the core stack</span></div>
+            <div className="code-window" aria-label="Developer profile code preview" data-testid="card-code-preview">
               <div className="window-bar">
                 <div className="window-dots"><i /><i /><i /></div>
                 <span>islam.config.ts</span>
@@ -344,12 +357,17 @@ function Home() {
                 <span className="code-line"><span className="code-num">11</span>{'}'}<span className="code-cursor" /></span>
               </div>
             </div>
+            </div>
           </div>
+        </section>
+
+        <section className="signal-strip" aria-label="Technology highlights">
+          <div className="signal-track"><span>Laravel</span><i /> <span>TypeScript</span><i /> <span>Node.js</span><i /> <span>REST APIs</span><i /> <span>MySQL</span><i /> <span>Cloud-ready</span></div>
         </section>
 
         <section className="section" id="services" aria-labelledby="services-heading">
           <div className="content-width">
-            <SectionHeading kicker="What I do / 01" id="services-heading" title={<>Useful work, <span>without the theatre.</span></>} detail="From the first technical decision to the last responsive detail, I keep the work legible, measured, and tied to a real outcome." />
+            <SectionHeading kicker="What I do / 01" id="services-heading" title={<>Systems with a clear<br /><span>reason to exist.</span></>} detail="From the first technical decision to the last responsive detail, every layer has a job to do." />
             <div className="services-grid">
               {services.map((service) => (
                 <article className="service-card" key={service.number} data-testid={`card-service-${service.number}`}>
